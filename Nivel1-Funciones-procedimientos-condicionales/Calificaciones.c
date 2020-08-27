@@ -64,39 +64,35 @@ void obtenerDiaSemana( int diaSemana){
 }
 
 int main(){
-	while(1) {
-		float nota=0.0;
-		int diaSemana;
-		//Solicite la nota
-		printf("Ingrese la nota a revisar recuerde el valor entre 0 y 5\n");
+	float nota=0.0;
+	int diaSemana;
+	//Solicite la nota
+	printf("Ingrese la nota a revisar recuerde el valor entre 0 y 5\n");
+	scanf("%f", &nota);
+	//Valide que se encuentre en el rango indicado
+	if (nota < 0 || nota > 5) {
+		printf("lo siento el valor de la calificación está por fuera del rango. Ingrese nota nuevamente: \n");
 		scanf("%f", &nota);
-		//Valide que se encuentre en el rango indicado
-		if (nota < 0 || nota > 5) {
-			printf("lo siento el valor de la calificación está por fuera del rango. Ingrese nota nuevamente: \n");
-			scanf("%f", &nota);
-		}
-
-		//Si se encuentra en el rango indicado invoque los procedimientos
-		// 	 imprimirCalificacionElseIf  e  imprimirCalificacionIfAnidado
-		
-		printf("-------procedimiento con if anidados-------\n");
-		imprimirCalificacionIfAnidado(nota);
-		printf("-------procedimiento con Else if-------\n");
-		imprimirCalificacionElseIf(nota);
-		
-		//TODO llamar a obtenerDiaSemana
-		
-		printf("Que dia es hoy? ingrese un numero del 1 al 7\n");
-		scanf("%d", &diaSemana);
-		
-		if(diaSemana<= 0 || diaSemana > 7) {
-			printf("Lo siento, no conozco ese valor. Ingrese numero nuevamente\n");
-			scanf("%d", &diaSemana);
-		}
-		
-		obtenerDiaSemana(diaSemana);
 	}
+
+	//Si se encuentra en el rango indicado invoque los procedimientos
+	// 	 imprimirCalificacionElseIf  e  imprimirCalificacionIfAnidado
 	
+	printf("-------procedimiento con if anidados-------\n");
+	imprimirCalificacionIfAnidado(nota);
+	printf("-------procedimiento con Else if-------\n");
+	imprimirCalificacionElseIf(nota);
 	
+	//TODO llamar a obtenerDiaSemana
+	
+	printf("Que dia es hoy? ingrese un numero del 1 al 7\n");
+	scanf("%d", &diaSemana);
+	
+	if(diaSemana<= 0 || diaSemana > 7) {
+		printf("Lo siento, no conozco ese valor. Ingrese numero nuevamente\n");
+		scanf("%d", &diaSemana);
+	}
+
+	obtenerDiaSemana(diaSemana);
 	return 0;
 }
