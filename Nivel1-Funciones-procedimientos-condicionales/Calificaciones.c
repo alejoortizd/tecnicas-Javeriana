@@ -4,14 +4,17 @@ void imprimirCalificacionIfAnidado(float nota){
 	/* Use solo if sin else */
 	if(nota >= 4.5)
 		printf("el estudiante es excelente\n");
-	if(nota>= 4.0 && nota < 4.5)
+	else 
+		if(nota>= 4.0 && nota < 4.5)
 		printf("el estudiante es muy bueno\n");
-	if(nota>= 3.5 && nota < 4.0)
-		printf("el estudiante es bueno\n");
-	if(nota>= 3.0 && nota < 3.5)
-		printf("el estudiante es aceptable\n");
-	if(nota < 3.0)
-		printf("el estudiante perdio la materia\n");
+		else 
+			if(nota>= 3.5 && nota < 4.0)
+			printf("el estudiante es bueno\n");
+			else 
+				if(nota>= 3.0 && nota < 3.5)
+				printf("el estudiante es aceptable\n");
+					else
+					printf("el estudiante perdio la materia\n");
 }
 
 void imprimirCalificacionElseIf(float nota){
