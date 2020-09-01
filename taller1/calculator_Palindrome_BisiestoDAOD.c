@@ -1,6 +1,7 @@
-
 //Incluyo biblioteca de entrada/salida.
 #include <stdio.h>
+#include <stdlib.h>
+
 
 int sumar(int numUno, int numDos)
 {
@@ -46,9 +47,11 @@ int palindrome(int numToCheck)
 int bisiesto(int year)
 {
   if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
-    printf("El año %d es bisiesto\n", year);
+    return 1;
+    // printf("El año %d es bisiesto\n", year);
   } else {
-    printf("El año %d es no es bisiesto\n", year);
+    return 0;
+    // printf("El año %d es no es bisiesto\n", year);
   }
 }
 
@@ -90,10 +93,21 @@ int main()
   } else {
     palindrome(numToCheck);
   }
-  int year;
+  int year, hermanos;
+  char  *name = (char*)malloc(10);
   printf("Ingresa el año a evaluar: ");
   scanf("%d", &year);
-  bisiesto(year);
-
+  printf("Ingresa tu nombre: ");
+  scanf("%s", name);
+  printf("Ingresa cuantos hermanos tienes: ");
+  scanf("%d", &hermanos);
+  int a = bisiesto(year);
+  if (a) {
+    printf("El año %d es bisiesto y tu nombre es %s\n", year, name);
+    free(name);
+  } else {
+    printf("El año %d no es bisiesto y tienes %d hermano(s)\n", year, hermanos);
+    free(name);
+  }
   return 0;
 }
