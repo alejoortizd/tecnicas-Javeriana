@@ -82,17 +82,17 @@ int main()
   printf("Ingresa un numero de 9 digitos para evaluar: ");
   scanf("%d", &numToCheck);
   evaluatenTC = numToCheck;
-  while (evaluatenTC > 0)
-  {
-    evaluatenTC /= 10;
-    contador++;
-  }
-  if (contador < 9) {
-    printf("Ingresa un numero de 9 digitos para evaluar: ");
-    scanf("%d", &numToCheck);
-  } else {
+  // while (evaluatenTC > 0)
+  // {
+  //   evaluatenTC /= 10;
+  //   contador++;
+  // }
+  // if (contador < 9) {
+  //   printf("Ingresa un numero de 9 digitos para evaluar: ");
+  //   scanf("%d", &numToCheck);
+  // } else {
     palindrome(numToCheck);
-  }
+  // }
   int year, hermanos;
   char  *name = (char*)malloc(10);
   printf("Ingresa el año a evaluar: ");
